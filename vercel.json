@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "kafka-broker-sim-frontend",
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "installCommand": "npm install --prefix frontend",
+  "framework": null,
+  "devCommand": null
+}
