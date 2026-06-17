@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-broker-dark text-gray-100 font-sans antialiased;
+  }
+
+  * {
+    @apply scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thumb-gray-700::-webkit-scrollbar-thumb {
+    background-color: #374151;
+    border-radius: 4px;
+  }
+
+  .scrollbar-track-gray-900::-webkit-scrollbar-track {
+    background-color: #111827;
+  }
+}
