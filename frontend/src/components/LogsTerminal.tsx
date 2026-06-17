@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { BrokerLog } from '../types';
 import { Terminal, Trash2 } from 'lucide-react';
 import { api } from '../services/api';
@@ -9,7 +9,7 @@ interface LogsTerminalProps {
 
 export const LogsTerminal: React.FC<LogsTerminalProps> = ({ logs }) => {
   const terminalRef = useRef<HTMLDivElement>(null);
-  const [autoScroll, setAutoScroll] = React.useState(true);
+  const [autoScroll, setAutoScroll] = useState(true);
 
   useEffect(() => {
     if (autoScroll && terminalRef.current) {
@@ -19,7 +19,9 @@ export const LogsTerminal: React.FC<LogsTerminalProps> = ({ logs }) => {
 
   const formatTimestamp = (timestamp: number): string => {
     const date = new Date(timestamp);
-    return date.toLocaleTimeString('en-US', { hour12: false, fractionalSecondDigits: 3 });
+    const time = date.toLocaleTimeString('en-US', { hour12: false });
+    const ms = date.getMilliseconds().toString().padStart(3, '0');
+    return `${time}.${ms}`;
   };
 
   const getLevelColor = (level: BrokerLog['level']): string => {

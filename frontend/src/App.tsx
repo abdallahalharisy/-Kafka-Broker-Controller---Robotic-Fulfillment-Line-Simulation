@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { useWebSocket } from './hooks/useWebSocket';
 import { Partition, DLQEntry, BrokerMetrics, BrokerLog, WebSocketMessage } from './types';
 import { MetricsPanel } from './components/MetricsPanel';

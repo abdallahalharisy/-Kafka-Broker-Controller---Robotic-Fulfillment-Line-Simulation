@@ -7,7 +7,7 @@ const RECONNECT_DELAY = 3000;
 export function useWebSocket(onMessage: (message: WebSocketMessage) => void) {
   const [isConnected, setIsConnected] = useState(false);
   const wsRef = useRef<WebSocket | null>(null);
-  const reconnectTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const reconnectTimeoutRef = useRef<number | null>(null);
 
   const connect = useCallback(() => {
     try {

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DLQEntry } from '../types';
-import { AlertTriangle, Edit3, RotateCcw, Trash2, Clock, XCircle } from 'lucide-react';
+import { AlertTriangle, Edit3, RotateCcw, Trash2, Clock } from 'lucide-react';
 import { api } from '../services/api';
 
 interface DLQPanelProps {
